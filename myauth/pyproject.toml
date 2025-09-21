@@ -1,0 +1,26 @@
+[project]
+name = "myauth"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "AmanKadam-16",email = "aman16112002kadam@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi (>=0.117.1,<0.118.0)",
+    "uvicorn (>=0.36.0,<0.37.0)",
+    "pydantic (>=2.11.9,<3.0.0)",
+    "sqlalchemy (>=2.0.43,<3.0.0)",
+    "alembic (>=1.16.5,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "myauth", from = "src"}]
+
+[tool.poetry.scripts]
+server = "src.myauth.main:run"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
